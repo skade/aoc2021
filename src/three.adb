@@ -5,7 +5,7 @@ package body three is
 
    procedure Easy is
       F         : File_Type;
-      File_Name : constant String := "C:\Code\advent-of-code-2021\one\input\three.txt";
+      File_Name : constant String := "input\three.txt";
    begin
       declare
          type Bit is range 0..1;

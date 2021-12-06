@@ -4,7 +4,7 @@ package body two is
 
    procedure Easy is
       F : File_Type;
-      File_Name : constant String := "C:\Code\advent-of-code-2021\one\input\two.txt";
+      File_Name : constant String := "input\two.txt";
 
       type Commands is (forward, up, down);
       
@@ -41,7 +41,7 @@ package body two is
    
    procedure Hard is
       F : File_Type;
-      File_Name : constant String := "C:\Code\advent-of-code-2021\one\input\two.txt";
+      File_Name : constant String := "input\two.txt";
 
       type Commands is (forward, up, down);
       

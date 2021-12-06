@@ -5,7 +5,7 @@ package body one is
 
    procedure Easy is
       F         : File_Type;
-      File_Name : constant String := "C:\Code\advent-of-code-2021\one\input\one.txt";
+      File_Name : constant String := "input\one.txt";
    begin
       declare
          Value : Integer;
@@ -38,7 +38,7 @@ package body one is
 
    procedure Hard is
       F         : File_Type;
-      File_Name : constant String := "C:\Code\advent-of-code-2021\one\input\one.txt";
+      File_Name : constant String := "input\one.txt";
    begin
       declare
          type Measurement is array(0..2) of Integer;
