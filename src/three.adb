@@ -27,6 +27,7 @@ package body three is
          EpsilonValue: Integer;
          
          LoopCounter: Integer;
+         NextChar: Character;
       begin
          Value := 0;
          Zeroes := (0,0,0,0,
@@ -40,7 +41,8 @@ package body three is
          while not End_Of_File (F) loop
 
             for I in Index loop
-               Bit_Text_IO.Get (F, Value);
+               Get (F, NextChar);
+               Value := Bit'Value("" & NextChar);
 
                case Value is
                when 0 =>
@@ -70,21 +72,20 @@ package body three is
                Gamma (I) := 1;
                Epsilon (I) := 0;
             end if;
-         end loop;         
-         
+         end loop;
+
          GammaValue := 0;
          EpsilonValue := 0;
          LoopCounter := 0;
          for I in reverse Index loop
-            GammaValue := GammaValue + Integer(Gamma (I)) + (2*LoopCounter);
-            EpsilonValue := EpsilonValue + Integer(Epsilon (I)) + (2*LoopCounter);
+            GammaValue := GammaValue + (Integer(Gamma (I)) * (2**LoopCounter));
+            EpsilonValue := EpsilonValue + (Integer(Epsilon (I)) * (2**LoopCounter));
             LoopCounter := LoopCounter + 1;
          end loop;
-         
-         Ada.Text_IO.Put_Line (Integer'Image (LoopCounter));
-         Ada.Text_IO.Put_Line (Integer'Image (LoopCounter));
 
+         Ada.Text_IO.Put_Line (Integer'Image (GammaValue));
+         Ada.Text_IO.Put_Line (Integer'Image (EpsilonValue));
+         Ada.Text_IO.Put_Line (Integer'Image (EpsilonValue * GammaValue));
       end;
    end Easy;
-
 end three;
